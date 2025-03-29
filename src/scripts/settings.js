@@ -18,8 +18,8 @@ function registerGameParameters() {
     const params = llmParametersAndDefaults();
 
     game.settings.register("ai-pc-ollama", "model", {
-        name: game.i18n.localize("unkenny.settings.model"),
-        hint: game.i18n.localize("unkenny.settings.modelDescription"),
+        name: game.i18n.localize("ai-pc-ollama.settings.model"),
+        hint: game.i18n.localize("ai-pc-ollama.settings.modelDescription"),
         scope: "world",
         config: true,
         type: String,
@@ -28,8 +28,8 @@ function registerGameParameters() {
     });
 
     game.settings.register("ai-pc-ollama", "apiKey", {
-        name: game.i18n.localize("unkenny.settings.apiKey"),
-        hint: game.i18n.localize("unkenny.settings.apiKeyDescription"),
+        name: game.i18n.localize("ai-pc-ollama.settings.apiKey"),
+        hint: game.i18n.localize("ai-pc-ollama.settings.apiKeyDescription"),
         scope: "world",
         config: true,
         type: String,

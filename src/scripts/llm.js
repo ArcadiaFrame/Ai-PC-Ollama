@@ -8,9 +8,9 @@ async function getGenerationParameter(actor, parameterName) {
     if (!actor) {
         return;
     }
-    let value = await actor.getFlag("unkenny", parameterName);
+    let value = await actor.getFlag("ai-pc-ollama", parameterName);
     if (value == null) {
-        value = game.settings.get("unkenny", parameterName);
+        value = game.settings.get("ai-pc-ollama", parameterName);
     }
     if (value == null) {
         value = llmParametersAndDefaults()[parameterName];

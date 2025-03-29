@@ -59,7 +59,7 @@ async function postResponse(response, actor) {
     await ui.chat.processMessage(response, chatData);
 }
 
-function processUnKennyResponse(message) {
+function processAIResponse(message) {
     const sourceId = message.getFlag("core", "sourceId");
     if (!sourceId) return;
     
@@ -72,4 +72,4 @@ function processUnKennyResponse(message) {
     }
 }
 
-export { postResponse, processUnKennyResponse, replaceAlias, respond, triggerResponse };
+export { postResponse, processAIResponse, replaceAlias, respond, triggerResponse };
