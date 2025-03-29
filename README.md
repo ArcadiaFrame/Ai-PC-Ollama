@@ -1,19 +1,10 @@
-# UnKenny - NPCs with artificial intelligence
+#  NPCs with artificial intelligence
 
 ## About
 
-UnKenny is a module for [Foundry Virtual Tabletop](https://foundryvtt.com/). It allows you to generate a tiny dialogue with a character, by providing them with a limited AI. The idea arose during our Starfinder game, because we wanted to simulate the interaction with a robotical NPC.
+Ai-PC-Ollama is a module for [Foundry Virtual Tabletop](https://foundryvtt.com/). It allows you to generate a tiny dialogue with a character, by providing them with a limited AI. The idea arose during our Starfinder game, because we wanted to simulate the interaction with a robotical NPC. this is a fork from Unkenny
 
-## Security
 
-__Be mindful which modules you enable.__
-
-If you are storing your OpenAI API key in UnKenny, you are entrusting it to us, and by extension, to FoundryVTT. The modularity of Foundry is one of its big selling points, but it is also an invitation to arbitrary code execution. Any module you install could, in principle, inject some code that steals your API key. Foundry takes some countermeasures like scoping of modules, but ultimately it is very hard to defend against attacks from within your application.
-
-For that reason, monitor your API key usage every now and then. If ever you find a module that has stolen your key, please
-* [Revoke your key.](https://help.openai.com/en/articles/4936817-i-see-suspicious-activity-on-my-account-what-do-i-do)
-* [Report it to FoundryVTT.](https://foundryvtt.com/contact-us/)
-* [Contact us.](mailto:thecomamba@jojoheinze.de)
 
 ## Usage
 
@@ -37,7 +28,7 @@ Provide the following two inputs:
 
 You may also overwrite any global settings for this actor only. If for example you want to have a particularly repetitive character, you could set the Repetition penalty to a negative value. However, most effects can also be achieved by accurately describing the character in the preamble.
 
-![UnKenny Sheet](https://raw.githubusercontent.com/thecomamba/unkenny/main/img/unkenny_sheet.png)
+
 
 ### Adressing Actors
 
@@ -64,7 +55,17 @@ If you want to add a new language, add a file called `src/lang/<new-lang>.json`,
 
 If you develop a feature or fix a bug, please make sure that the behaviour is covered by tests. It may be necessary to expand the FoundryVTT mock contained in the `__mocks__` folder. Without thorough test coverage this module quickly becomes unmaintainable.
 
-## Manual Installation
+## Installation
+
+### Install via Foundry VTT Module Manager
+
+The easiest way to install this module is through the Foundry VTT module manager. Simply search for "UnKenny" or use the following manifest URL in the "Install Module" dialog:
+
+```
+https://raw.githubusercontent.com/ArcadiaFrame/Ai-PC-Ollama/v1.3.0/src/module.json
+```
+
+### Manual Installation
 
 To manually install UnKenny (e.g. for development), copy the src/ folder of this repository to the {userData}/Data/modules/ folder of Foundry, and then rename it to 'unkenny' (the id declared in module.json).
 
