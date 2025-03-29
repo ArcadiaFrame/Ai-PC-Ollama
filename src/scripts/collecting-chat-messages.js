@@ -100,14 +100,14 @@ function smuggleConversationWithFlagIntoSource(source, actorId) {
     if (!source['flags']) {
         source.flags = {};
     }
-    if (!source.flags['unkenny']) {
-        source.flags['unkenny'] = {};
+    if (!source.flags['ai-pc-ollama']) {
+        source.flags['ai-pc-ollama'] = {};
     }
-    source.flags['unkenny'][CONVERSATION_FLAG] = actorId;
+    source.flags['ai-pc-ollama'][CONVERSATION_FLAG] = actorId;
 }
 
 function getConversationWithFlagSync(message) {
-    return message?.flags?.unkenny ? message.flags.unkenny[CONVERSATION_FLAG] : undefined;
+    return message?.flags?.['ai-pc-ollama'] ? message.flags['ai-pc-ollama'][CONVERSATION_FLAG] : undefined;
 }
 
 async function removeMessageFromUnKennyConversation(message) {

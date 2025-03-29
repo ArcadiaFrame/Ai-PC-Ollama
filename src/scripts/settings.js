@@ -17,7 +17,7 @@ function llmParametersAndDefaults() {
 function registerGameParameters() {
     const params = llmParametersAndDefaults();
 
-    game.settings.register("unkenny", "model", {
+    game.settings.register("ai-pc-ollama", "model", {
         name: game.i18n.localize("unkenny.settings.model"),
         hint: game.i18n.localize("unkenny.settings.modelDescription"),
         scope: "world",
@@ -27,7 +27,7 @@ function registerGameParameters() {
         default: params.model
     });
 
-    game.settings.register("unkenny", "apiKey", {
+    game.settings.register("ai-pc-ollama", "apiKey", {
         name: game.i18n.localize("unkenny.settings.apiKey"),
         hint: game.i18n.localize("unkenny.settings.apiKeyDescription"),
         scope: "world",
@@ -36,7 +36,7 @@ function registerGameParameters() {
         default: params.apiKey
     });
 
-    game.settings.register("unkenny", "ollamaHost", {
+    game.settings.register("ai-pc-ollama", "ollamaHost", {
         name: "Ollama Host URL",
         hint: "The URL where your Ollama instance is running (e.g., http://localhost:11434). Required for using Ollama models.",
         scope: "world",
@@ -45,7 +45,7 @@ function registerGameParameters() {
         default: params.ollamaHost
     });
 
-    game.settings.register("unkenny", "minNewTokens", {
+    game.settings.register("ai-pc-ollama", "minNewTokens", {
         name: game.i18n.localize("unkenny.settings.minNewTokens"),
         hint: game.i18n.localize("unkenny.settings.minNewTokensDescription"),
         scope: "world",
@@ -59,7 +59,7 @@ function registerGameParameters() {
         default: params.minNewTokens
     });
 
-    game.settings.register("unkenny", "maxNewTokens", {
+    game.settings.register("ai-pc-ollama", "maxNewTokens", {
         name: game.i18n.localize("unkenny.settings.maxNewTokens"),
         hint: game.i18n.localize("unkenny.settings.maxNewTokensDescription"),
         scope: "world",
@@ -73,7 +73,7 @@ function registerGameParameters() {
         default: params.maxNewTokens
     });
 
-    game.settings.register("unkenny", "repetitionPenalty", {
+    game.settings.register("ai-pc-ollama", "repetitionPenalty", {
         name: game.i18n.localize("unkenny.settings.repetitionPenalty"),
         hint: game.i18n.localize("unkenny.settings.repetitionPenaltyDescription"),
         scope: "world",
@@ -87,7 +87,7 @@ function registerGameParameters() {
         default: params.repetitionPenalty
     });
 
-    game.settings.register("unkenny", "temperature", {
+    game.settings.register("ai-pc-ollama", "temperature", {
         name: game.i18n.localize("unkenny.settings.temperature"),
         hint: game.i18n.localize("unkenny.settings.temperatureDescription"),
         scope: "world",
@@ -101,7 +101,7 @@ function registerGameParameters() {
         default: params.temperature
     });
 
-    game.settings.register("unkenny", "prefix", {
+    game.settings.register("ai-pc-ollama", "prefix", {
         name: game.i18n.localize("unkenny.settings.prefix"),
         hint: game.i18n.localize("unkenny.settings.prefixDescription"),
         scope: "world",

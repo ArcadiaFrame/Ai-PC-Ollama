@@ -38,18 +38,18 @@ class UnKennySheet extends DocumentSheet {
     }
 
     async initContextWithActorData() {
-        this.context.alias = await this.object.getFlag("unkenny", "alias") || "";
-        this.context.preamble = await this.object.getFlag("unkenny", "preamble") || "";
+        this.context.alias = await this.object.getFlag("ai-pc-ollama", "alias") || "";
+        this.context.preamble = await this.object.getFlag("ai-pc-ollama", "preamble") || "";
 
-        let currentModel = await this.object.getFlag("unkenny", "model");
+        let currentModel = await this.object.getFlag("ai-pc-ollama", "model");
         this.setContextModel(currentModel);
 
-        this.context.minNewTokens = await this.object.getFlag("unkenny", "minNewTokens");
-        this.context.maxNewTokens = await this.object.getFlag("unkenny", "maxNewTokens");
-        this.context.repetitionPenalty = await this.object.getFlag("unkenny", "repetitionPenalty");
-        this.context.temperature = await this.object.getFlag("unkenny", "temperature");
+        this.context.minNewTokens = await this.object.getFlag("ai-pc-ollama", "minNewTokens");
+        this.context.maxNewTokens = await this.object.getFlag("ai-pc-ollama", "maxNewTokens");
+        this.context.repetitionPenalty = await this.object.getFlag("ai-pc-ollama", "repetitionPenalty");
+        this.context.temperature = await this.object.getFlag("ai-pc-ollama", "temperature");
 
-        let currentPrefix = await this.object.getFlag("unkenny", "prefix") || "none";
+        let currentPrefix = await this.object.getFlag("ai-pc-ollama", "prefix") || "none";
         this.setContextPrefix(currentPrefix);
     }
 
@@ -86,15 +86,15 @@ class UnKennySheet extends DocumentSheet {
     }
 
     async _updateObject(_event, formData) {
-        await this.object.setFlag("unkenny", "alias", formData.alias);
-        await this.object.setFlag("unkenny", "preamble", formData.preamble);
+        await this.object.setFlag("ai-pc-ollama", "alias", formData.alias);
+        await this.object.setFlag("ai-pc-ollama", "preamble", formData.preamble);
         await this.updateFlag(formData, "model");
         await this.updateFlag(formData, "minNewTokens");
         await this.updateFlag(formData, "maxNewTokens");
         await this.updateFlag(formData, "repetitionPenalty");
         await this.updateFlag(formData, "temperature");
         if (formData.prefix == "none") {
-            await this.object.unsetFlag("unkenny", "prefix");
+            await this.object.unsetFlag("ai-pc-ollama", "prefix");
         } else {
             await this.updateFlag(formData, "prefix");
         }
@@ -108,9 +108,9 @@ class UnKennySheet extends DocumentSheet {
 
     async updateFlag(formData, key) {
         if (formData[key]) {
-            await this.object.setFlag("unkenny", key, formData[key]);
+            await this.object.setFlag("ai-pc-ollama", key, formData[key]);
         } else {
-            await this.object.unsetFlag("unkenny", key);
+            await this.object.unsetFlag("ai-pc-ollama", key);
         }
     }
 }

@@ -19,7 +19,7 @@ async function triggerResponse(actor, request) {
         return;
     }
     let name = actor.name;
-    let alias = await actor.getFlag("unkenny", "alias");
+    let alias = await actor.getFlag("ai-pc-ollama", "alias");
     request = replaceAlias(request, alias, name);
 
     let parameters = await getGenerationParameters(actor);
@@ -51,7 +51,7 @@ async function postResponse(response, actor) {
             alias: actor.name
         },
         flags: {
-            unkenny: {
+            'ai-pc-ollama': {
                 responseData: response
             }
         }
@@ -60,14 +60,15 @@ async function postResponse(response, actor) {
 }
 
 function processUnKennyResponse(message) {
-    let source = message._source;
-    const responseData = source.flags?.unkenny?.responseData;
+    const sourceId = message.getFlag("core", "sourceId");
+    if (!sourceId) return;
+    
+    const source = game.messages.get(sourceId);
+    if (!source) return;
+    
+    const responseData = source.flags?.['ai-pc-ollama']?.responseData;
     if (responseData) {
-        source.content = responseData;
-        const actorId = source.speaker.actor;
-        if (actorId) {
-            smuggleConversationWithFlagIntoSource(source, actorId);
-        }
+        message.content = responseData;
     }
 }
 

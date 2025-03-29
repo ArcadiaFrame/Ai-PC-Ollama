@@ -67,12 +67,12 @@ https://raw.githubusercontent.com/ArcadiaFrame/Ai-PC-Ollama/v1.3.0/src/module.js
 
 ### Manual Installation
 
-To manually install UnKenny (e.g. for development), copy the src/ folder of this repository to the {userData}/Data/modules/ folder of Foundry, and then rename it to 'unkenny' (the id declared in module.json).
+To manually install UnKenny (e.g. for development), copy the src/ folder of this repository to the {userData}/Data/modules/ folder of Foundry, and then rename it to 'ai-pc-ollama' (the id declared in module.json).
 
 On POSIX compliant operating systems like Linux and Mac you can alternatively use a symbolic link. It can be created via e.g.
 
 ```bash
-ln -s {folder containing git repo}/UnKenny/src {Foundry user data}/Data/modules/unkenny
+ln -s {folder containing git repo}/UnKenny/src {Foundry user data}/Data/modules/ai-pc-ollama
 ```
 
 ## License

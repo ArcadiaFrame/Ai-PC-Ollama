@@ -18,7 +18,7 @@ async function actorHasAlias(actor, alias) {
     }
 
     const lowerCaseAlias = alias.toLowerCase();
-    const actorAlias = (await actor.getFlag("unkenny", "alias") ?? "").toLowerCase();
+    const actorAlias = (await actor.getFlag("ai-pc-ollama", "alias") ?? "").toLowerCase();
 
     return actorAlias === lowerCaseAlias;
 }

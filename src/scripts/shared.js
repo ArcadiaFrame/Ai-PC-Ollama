@@ -6,7 +6,7 @@ async function isUnKenny(actor) {
         ui.notifications.error(errorMessage);
         return false;
     }
-    let alias = await actor.getFlag("unkenny", "alias");
+    let alias = await actor.getFlag("ai-pc-ollama", "alias");
     return !!alias;
 }
 
