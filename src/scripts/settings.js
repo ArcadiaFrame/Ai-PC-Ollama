@@ -5,6 +5,7 @@ function llmParametersAndDefaults() {
     return {
         model: null,
         apiKey: "",
+        ollamaHost: "http://localhost:11434",
         minNewTokens: 1,
         maxNewTokens: 250,
         repetitionPenalty: 0.0,
@@ -33,6 +34,15 @@ function registerGameParameters() {
         config: true,
         type: String,
         default: params.apiKey
+    });
+
+    game.settings.register("unkenny", "ollamaHost", {
+        name: "Ollama Host URL",
+        hint: "The URL where your Ollama instance is running (e.g., http://localhost:11434). Required for using Ollama models.",
+        scope: "world",
+        config: true,
+        type: String,
+        default: params.ollamaHost
     });
 
     game.settings.register("unkenny", "minNewTokens", {

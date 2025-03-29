@@ -31,9 +31,9 @@
       "path": "lang/de.json"
     }
   ],
-  "url": "https://github.com/TheComamba/UnKenny",
-  "manifest": "https://raw.githubusercontent.com/TheComamba/UnKenny/v1.3.0/src/module.json",
-  "download": "https://github.com/TheComamba/UnKenny/archive/refs/tags/v1.3.0.zip",
-  "bugs": "https://github.com/TheComamba/UnKenny/issues",
-  "readme": "https://github.com/TheComamba/UnKenny/blob/v1.3.0/README.md"
+  "url": "https://github.com/ArcadiaFrame/Ai-PC-Ollama",
+  "manifest": "https://raw.githubusercontent.com/ArcadiaFrame/Ai-PC-Ollama/v1.3.0/src/module.json",
+  "download": "https://github.com/ArcadiaFrame/Ai-PC-Ollama/archive/refs/tags/v1.3.0.zip",
+  "bugs": "https://github.com/ArcadiaFrame/Ai-PC-Ollama/issues",
+  "readme": "https://github.com/ArcadiaFrame/Ai-PC-Ollama/blob/v1.3.0/README.md"
 }
